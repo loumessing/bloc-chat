@@ -1,11 +1,18 @@
+<div class="side-bar">
+  <div class="chat-title">
+    <strong>Bloc Chat</strong>
+  </div>
+
 <section class="rooms container clearfix">
   <div class="community-room-container column fourth" ng-repeat="room in home.rooms track by $index">
     <div class="community-room-info caption">
       <p>
-        <a class="room-name" ui-sref="room">{{ room.roomName }}</a>
+        <a class="room-name" ui-sref="room">{{ room.$value }}</a>
         </br>
-        {{ room.messages.length }} messages
+
         </br>
       </p>
     </div>
+</div>
+</section>
 </div>
