@@ -1,0 +1,19 @@
+.header {
+	position: relative;
+	margin-top: 60px;
+}
+
+h4,
+p {
+	position: relative;
+	left: 25px;
+}
+
+input {
+	width: 350px;
+}
+
+.footer {
+	position: relative;
+	right: 380px;
+}
