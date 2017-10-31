@@ -1,19 +1,19 @@
-<div class="modal-header">
+<div>
+  <div class="modal-header">
   <h2 class="modal-title">Modal Here</h2>
 </div>
 <div class="modal-body">
-
+  <h3>Need a room?</3>
+    <br>
   <p>Enter a new room name</p>
-  <form name="add-room" ng-submit="modalInstance.ok()">
-    <input type="text" class="form-control" ng-model="modalInstance.room" title="room-name" placeholder="Name Room" autofocus/>
+  <form ng-submit="modalInstance.ok()">
+    <input type="text" name='submission' ng-model="modalInstance.room"  placeholder="Name Room" autofocus/>
   </form>
+  <br>
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" type="button" ng-click="modal.ok()">Create</button>
-</div>
-<div>
-  <div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="modalInstance.ok()">Create</button>
   <buton class="btn btn-warning" type="button" ng-click="modalInstance.cancel()">Cancel</button>
   </div>
 </div>
