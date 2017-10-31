@@ -5,13 +5,20 @@
             enabled: true,
             requireBase: false
         });
-//added some text for changes and edits; test for github
+
+  /*      $stateProvider
+          .state('modal', {
+            url: '/',
+            controller: 'ModalCtrl as modal',
+            templateUrl: '/templates/modal.html'
+          });*/
+
         $stateProvider
           .state('home', {
             url: '/',
             controller: 'HomeCtrl as home',
             templateUrl: '/templates/home.html'
-          })
+          });
 
           .state('rooms', {
             url: '/rooms',
@@ -29,7 +36,7 @@
   });
 
   angular
-    .module('blocChat', ['ui.router', 'firebase'])
+    .module('blocChat', ['ui.bootstrap', 'ui.router', 'firebase' ])
         .config(config);
 
 })();

@@ -1,7 +1,7 @@
 (function(){
   function HomeCtrl(Room){
     this.rooms = Room.all;
-console.log(this.rooms)
+    this.greeting = "Welcome to Bloc Chat";
   }
   angular
     .module('blocChat')
