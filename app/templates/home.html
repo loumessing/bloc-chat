@@ -1,11 +1,43 @@
-<section class="rooms container clearfix">
-  <div class="community-room-container column fourth" ng-repeat="room in home.rooms track by $index">
-    <div class="community-room-info caption">
-      <p>
-        <a class="room-name" ui-sref="room">{{ room.roomName }}</a>
-        </br>
-        {{ room.messages.length }} messages
-        </br>
-      </p>
+
+<!DOCTYPE html>
+<section ng-controller="HomeCtrl as home">
+
+    <div class="navbar col-sm-3">
+        <h3>{{home.title}}</h3>
+
+        <br/>
+        <div ng-controller='ModalCtrl as modal'>
+              <button type="button" class="btn btn-default" ng-click="modal.open()">New room</button>
+          </div>
+        <!--List chat rooms-->
+        <h5 ng-click="home.setRoom(room)" ng-repeat="room in home.room">{{room.$value}}</h5>
+
+        <br/>      
+
+    </div>
+
+<div class='msg-container'>
+    <h2>{{ currentRoom.$value }}</h2>
+    <table class="table">
+        <tr class="row" ng-repeat="message in messages">
+
+            <td class="username">
+                {{ message.username }}:
+                <br/> {{ message.content }}
+            </td>
+            <td class="sentAt">{{ message.sentAt }}</td>
+            <!--Hasn't been defined yet-->
+        </tr>
+
+    </table>
+</div>
+
+<div class='msg-send'>
+    <div>
+        <form name="message" action="">
+            <input name="usermsg" type="text" id="usermsg" size="50" />
+            <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+        </form>
     </div>
 </div>
+</body>

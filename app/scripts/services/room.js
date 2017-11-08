@@ -1,15 +1,24 @@
-(function() {
-  function Room($firebaseArray) {
- // var ref = new firebase('https://lm-bloc-chat.firebaseio.com/rooms');
-  var Room = {};
-  var ref = firebase.database().ref().child("rooms");
-  var rooms = $firebaseArray(ref);
+  (function() {
+    function Room($firebaseArray) { //going to pass in $firebaseArray
+        var Room = {}; //empty object
+        var ref = firebase.database().ref().child("rooms"); //go to database, reference children of rooms, will return the list
+        var rooms = $firebaseArray(ref); //rooms equals array of rooms (room1, room2, room3)
 
- Room.all = rooms;
- return Room;
+        Room.all = rooms; //all method now lists all those chat rooms
+        console.log("Loaded Room.all (listed all rooms)");
 
-  }
-  angular
-    .module('blocChat')
-    .factory('Room', ['$firebaseArray', Room]);
-})();
+        console.log("Made it outside of Room.create"); //I did :D
+
+        Room.create = function(room) { //going to give Room an add method, using firebase's built in $add method create it
+            //rooms.$add(room); //firebaseArray already referenced above, just need to call in, use $add service, and specify that it's whatever argument is passed into the function
+            console.log("Made it down to room.$add command");
+            rooms.$add(room); //add a new room to the 'var rooms' array
+            console.log("Made it past room.$add command");
+        };
+
+        return Room;  
+    }
+    angular
+      .module('blocChat')
+      .factory('Room', ['$firebaseArray', Room]);
+  })();
