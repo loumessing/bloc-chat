@@ -4,7 +4,7 @@
          this.title = "Create New Room!!!";
 
          this.open = function() {
-             console.log("Made it inside of ModalCtrl.open");
+//console.log("Made it inside of ModalCtrl.open");
              var modalInstance = $uibModal.open({ //copied directly from documentation
                  animation: this.animationsEnabled,
                  templateUrl: 'templates/modal.html',
@@ -12,16 +12,16 @@
                  controllerAs: 'modalInstance'
              });
 
-             console.log("Made it outside of ModalCtrl.open");
+            // console.log("Made it outside of ModalCtrl.open");
 
              modalInstance.result.then(function(room) {
-                 console.log("Entered modalInstance.result.then");
+            //     console.log("Entered modalInstance.result.then");
                  this.room = room;
-                 console.log("Passed room argument into this.room");
+            //     console.log("Passed room argument into this.room");
                  Room.create(this.room);
-                 console.log("Passed this.room into Room.create");
+          //       console.log("Passed this.room into Room.create");
              }, function() {
-                 console.log("Made it inside of modalInstance.result.then 2");
+            //     console.log("Made it inside of modalInstance.result.then 2");
              });
          };
      }
