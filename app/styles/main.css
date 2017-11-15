@@ -1,72 +1,58 @@
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-}
-.navbar {
-   height: 100%;
-   width: 22%;
-   float: left;
-   background-color: darkgray;
-}
-.chatroomname {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0px;
-}
-.chatcontent {
-  height: 100%;
-  width: 85%;
-  margin-left: 170px;
-  padding-left: 25px;
-  background-color: black;
-  color: white;
-}
+/*UI Bootstrap*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+/**************/
 
-/*Messages*/
+/*bootstrap modal background bug fix*/
+.modal-backdrop.in {
+    background: rgba(0, 0, 0, 0.5);
+    }
+/******************/
 
-.messages {
-    position: fixed;
-    top: 22px;
-    left: 22%;
-    width: 80%;
+body, html{
     height: 100%;
-    background-color: black;
+    width: 100%;
+}
+
+.sidebar{
+    background: lightslategray;
+    float: left;
+    padding-top: 15px;
+    height: 100%;
+    width: 15%;
+    text-align: center;
+    border-right: 3px ridge white;
+}
+
+.chat_messages{
+    background: lightgray;
+    float: left;
+    padding-top: 15px;
+    padding-left: 20px;
+    width: 85%;
+    height: 100%;
+}
+
+.message{
+    border-bottom: 1px solid black;
+    width: 80%;
+}
+
+.room_names{
+    text-align: left;
+    list-style-type: none;
+}
+
+.room_names li{
+    width: 60%;
+    padding-top: 15px;
+    margin-top: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    border-radius: .25rem;
+}
+
+.room_names li:hover{
+    cursor: pointer;
+    background-color: #17a2b8;
     color: white;
-    z-index: 1;
-    overflow: scroll;
-}
-
-.messages-body {
-    padding-right: 10px;
-}
-
-.messages-body .username {
-    font-weight: bold;
-}
-
-.messages-body .timestamp {
-    float: right;
-    padding-right: 100px;
-}
-
-.messages-body .username .timestamp {
-    display: inline-block;
-}
-
-.messages-body .user-message {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: inline-block;
-}
-
-.message-field {
-    bottom: 0;
-    padding-bottom: 5px;
-    position: fixed;
-}
-
-.message-box {
-    width: 800px;
 }

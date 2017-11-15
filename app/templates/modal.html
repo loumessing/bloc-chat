@@ -3,10 +3,15 @@
          <h3 class="modal-title">Create new room</h3>
      </div>
      <div class="modal-body">
-         <h5 class="room-name">Enter a room name</h5>
-             <input type="text" name="input" placeholder="New Chat Room Name" autofocus ng-model="modalInstance.newRoom">
-             <h4>New Chat Room Will Be: {{ modalInstance.newRoom }}</h4>
-     </div>
+       Enter a room name:
+    <br/>
+    <form ng-submit="modal.ok()">
+      <div class="input-group animated">
+        <input type="text" class="form-control finderBar" ng-model="modal.name" title="name" placeholder="Your room name here" autofocus>
+        <h4>{{ modal.name }}</h4>
+      </div>
+    </form>
+
      <div class="modal-footer">
          <button class="btn-cancel" type="button" ng-click="modalInstance.cancel()">Cancel</button>
          <button class="btn-submit" type="button" ng-click="modalInstance.submit()">Create</button>

@@ -1,0 +1,17 @@
+<div>
+  <div class="modal-header">
+    <h2 class="modal-title">Set username</h2>
+  </div>
+  <div class="modal-body">
+    This is your user name when you send a message.
+  </br>
+  <form name="Username" ng-submit="ok(Username.$valid)" novalidate>
+    <div class="input-group animated">
+      <input type="text" class="form-control finderBar" ng-model="username" name="username" ng-minlength="1" required autofocus>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="ok()">Set username</button>
+</div>
+</div>
