@@ -5,12 +5,19 @@
       this.room = Room.all; //method created in Room.js to list all chat rooms
       this.currentRoom = null;
       this.messages = null;
-
+//controller method
       this.setRoom = function(room) {
           $scope.currentRoom = room;
           console.log(room);
           $scope.messages = Message.getByRoomId(room.$id);
           console.log(room.$id);
+      };
+
+      this.sendMessage = function(message) {
+        alert("Hi there");
+        //we want to display the actual message as an alert, like an onion!
+        //set this up between the data(firebase); how are we accessing the username handle?
+        //build the message params/data
       };
   }
 

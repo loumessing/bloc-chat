@@ -12,12 +12,12 @@
         <!--List chat rooms-->
         <h5 ng-click="home.setRoom(room)" ng-repeat="room in home.room">{{room.$value}}</h5>
 
-        <br/>      
+        <br/>
 
     </div>
 
 <div class='msg-container'>
-    <h2>{{ currentRoom.$value }}</h2>
+    <h3>{{ currentRoom.$value }}</h3>
     <table class="table">
         <tr class="row" ng-repeat="message in messages">
 
@@ -25,7 +25,7 @@
                 {{ message.username }}:
                 <br/> {{ message.content }}
             </td>
-            <td class="sentAt">{{ message.sentAt }}</td>
+            <td class="sentAt">{{ message.sentAt | date: "shortTime"}}</td>
             <!--Hasn't been defined yet-->
         </tr>
 
@@ -36,7 +36,10 @@
     <div>
         <form name="message" action="">
             <input name="usermsg" type="text" id="usermsg" size="50" />
-            <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            <button class="btn-submit" type="button" id="submitmsg" ng-click="home.sendMessage()">send message</button>
+
+
+            <!--need some kind of ng-click here to communicate with the username-->
         </form>
     </div>
 </div>
