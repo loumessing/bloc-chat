@@ -14,7 +14,9 @@
       };
 
       this.sendMessage = function(message) {
-        alert("Hi there");
+        //alert("Hi there");
+        //explain what this did
+        alert(message);
         //we want to display the actual message as an alert, like an onion!
         //set this up between the data(firebase); how are we accessing the username handle?
         //build the message params/data

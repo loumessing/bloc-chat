@@ -34,11 +34,10 @@
 
 <div class='msg-send'>
     <div>
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg" size="50" />
-            <button class="btn-submit" type="button" id="submitmsg" ng-click="home.sendMessage()">send message</button>
-
-
+        <form name="message" ng-submit="home.sendMessage(usermsg)">
+            <input ng-model="usermsg" type="text" id="usermsg" size="50" />
+            <input class="btn-submit" type="submit" id="submitmsg" value="send message">
+            <!--need proof what did we do here, exactly? what happens next -->
             <!--need some kind of ng-click here to communicate with the username-->
         </form>
     </div>
